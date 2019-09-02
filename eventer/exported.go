@@ -49,7 +49,7 @@ func AddEventHandler(event *EventHandler) {
 func LaunchEvent(eventName string, data interface{}) (interface{}, error) {
 	handler, exists := events[eventName]
 	if !exists {
-		return nil, EventNotFoundError
+		return nil, ErrEventNotFound
 	}
 
 	returnedData := handler.Handler(data)

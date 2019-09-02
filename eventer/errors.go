@@ -6,5 +6,5 @@ import (
 )
 
 var (
-	EventNotFoundError = errors.New("event not found")
+	ErrEventNotFound = errors.New("event not found")
 )

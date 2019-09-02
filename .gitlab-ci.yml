@@ -19,6 +19,7 @@ lint:
   tags:
     - docker
   script:
+    - pwd
     - golangci-lint linters
     - golangci-lint run
 
@@ -27,4 +28,5 @@ test:
   tags:
     - docker
   script:
+    - pwd
     - go test -test.v -cover ./...
