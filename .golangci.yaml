@@ -1,0 +1,12 @@
+run:
+  deadline: 5m
+linters:
+  enable-all: true
+  disable:
+    # Actually not really needed.
+    - gochecknoglobals
+linters-settings:
+  lll:
+    line-length: 420
+  gocyclo:
+    min-complexity: 40
