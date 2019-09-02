@@ -5,6 +5,7 @@ import (
 	"log"
 
 	// local
+	"develop.pztrn.name/gonews/gonews/commands/capabilities"
 	"develop.pztrn.name/gonews/gonews/commands/greeting"
 	"develop.pztrn.name/gonews/gonews/commands/quit"
 )
@@ -14,4 +15,5 @@ func Initialize() {
 
 	greeting.Initialize()
 	quit.Initialize()
+	capabilities.Initialize()
 }

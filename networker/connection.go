@@ -57,7 +57,7 @@ func connectionWorker(conn net.Conn) {
 		// ToDo: what if we'll upload binary data here?
 		// Not supported yet.
 		data := strings.Split(scanr.Text(), " ")
-		replyRaw, err := eventer.LaunchEvent("commands/"+data[0], data[1:])
+		replyRaw, err := eventer.LaunchEvent("commands/"+strings.ToLower(data[0]), data[1:])
 		if err != nil {
 			// We won't break here as this is just logging of appeared error.
 			log.Println("Error appeared while processing command '" + data[0] + "' for " + remoteAddr.String() + ": " + err.Error())

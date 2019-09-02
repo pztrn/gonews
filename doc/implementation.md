@@ -13,10 +13,10 @@ This document will be updated with new RFCs data in process of development.
 RFC3977:
 
 * [ ] Connection handling ([section 5](https://tools.ietf.org/html/rfc3977#section-5)):
-    * [ ] Concurrent connection handling
-    * [ ] CAPABILITIES command ([section 5.2](https://tools.ietf.org/html/rfc3977#section-5.2))
+    * [x] Concurrent connection handling
+    * [x] CAPABILITIES command ([section 5.2](https://tools.ietf.org/html/rfc3977#section-5.2))
     * [ ] MODE command ([section 5.3](https://tools.ietf.org/html/rfc3977#section-5.3))
-    * [ ] QUIT command ([section 5.4](https://tools.ietf.org/html/rfc3977#section-5.4))
+    * [x] QUIT command ([section 5.4](https://tools.ietf.org/html/rfc3977#section-5.4))
 * [ ] Article retrieval and posting, working with groups ([section 6](https://tools.ietf.org/html/rfc3977#section-6)):
     * [ ] Group selection and information retrieval ([section 6.1.1](https://tools.ietf.org/html/rfc3977#section-6.1.1))
     * [ ] Group selection and information retrieval with articles numbers ([section 6.1.2](https://tools.ietf.org/html/rfc3977#section-6.1.2))
