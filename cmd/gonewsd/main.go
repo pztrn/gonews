@@ -8,6 +8,8 @@ import (
 	"syscall"
 
 	// local
+	"develop.pztrn.name/gonews/gonews/commands"
+	"develop.pztrn.name/gonews/gonews/configuration"
 	"develop.pztrn.name/gonews/gonews/eventer"
 	"develop.pztrn.name/gonews/gonews/networker"
 )
@@ -15,7 +17,9 @@ import (
 func main() {
 	log.Println("Starting gonewsd...")
 
+	configuration.Initialize()
 	eventer.Initialize()
+	commands.Initialize()
 	networker.Initialize()
 
 	eventer.InitializeCompleted()
