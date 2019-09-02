@@ -10,7 +10,7 @@ stages:
 before_script:
   - go version
   - golangci-lint --version
-  - mkdir -p $GOPATH/src/$APP_PATH/$APP_NAME
+  - mkdir -p $GOPATH/src/$APP_PATH
   - ln -s $CI_PROJECT_DIR $GOPATH/src/$APP_PATH/$APP_NAME
   - cd $GOPATH/src/$APP_PATH/$APP_NAME
 
