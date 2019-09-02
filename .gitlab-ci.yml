@@ -20,6 +20,7 @@ lint:
     - docker
   script:
     - pwd
+    - ls -la
     - golangci-lint linters
     - golangci-lint run
 
@@ -29,4 +30,5 @@ test:
     - docker
   script:
     - pwd
+    - ls -la
     - go test -test.v -cover ./...
