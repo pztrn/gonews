@@ -16,11 +16,15 @@ before_script:
 
 lint:
   stage: test
+  tags:
+    - docker
   script:
     - golangci-lint linters
     - golangci-lint run
 
 test:
   stage: test
+  tags:
+    - docker
   script:
     - go test -test.v -cover ./...
