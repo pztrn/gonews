@@ -9,10 +9,16 @@ import (
 	"develop.pztrn.name/gonews/gonews/configuration"
 )
 
+var connections map[string]*connection
+
 // This function responsible for accepting incoming connections for
 // each address configuration.
 func startServer(config configuration.Network) {
 	log.Println("Starting server on " + config.Address + " (type: " + config.Type + ")")
+
+	if connections == nil {
+		connections = make(map[string]*connection)
+	}
 
 	l, err := net.Listen("tcp", config.Address)
 	if err != nil {
@@ -32,6 +38,10 @@ func startServer(config configuration.Network) {
 			continue
 		}
 
-		go connectionWorker(conn)
+		c := &connection{}
+		c.Initialize(conn)
+		connections[conn.RemoteAddr().String()] = c
+
+		go c.Start()
 	}
 }
