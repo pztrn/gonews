@@ -1,0 +1,9 @@
+database:
+  dsn: "postgres://gonews:gonews@127.0.0.1:15432/gonews"
+  params: "connect_timeout=10&sslmode=disable"
+  timeout: 10
+
+network:
+  - address: "0.0.0.0:1199"
+    type: "client"
+    limit: 50

@@ -10,6 +10,7 @@ import (
 	// local
 	"develop.pztrn.name/gonews/gonews/commands"
 	"develop.pztrn.name/gonews/gonews/configuration"
+	"develop.pztrn.name/gonews/gonews/database"
 	"develop.pztrn.name/gonews/gonews/eventer"
 	"develop.pztrn.name/gonews/gonews/networker"
 )
@@ -18,6 +19,7 @@ func main() {
 	log.Println("Starting gonewsd...")
 
 	configuration.Initialize()
+	database.Initialize()
 	eventer.Initialize()
 	commands.Initialize()
 	networker.Initialize()
@@ -32,6 +34,7 @@ func main() {
 	go func() {
 		<-signalHandler
 		log.Println("CTRL+C or SIGTERM received, shutting down gonewsd...")
+		database.Shutdown()
 		shutdownDone <- true
 	}()
 
