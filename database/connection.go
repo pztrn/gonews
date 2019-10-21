@@ -47,6 +47,7 @@ func startConnectionWatcher() {
 
 	ticker.Stop()
 	log.Println("Connection watcher stopped and connection to database was shutted down")
+
 	connWatcherStopped = true
 }
 
@@ -56,11 +57,14 @@ func watcher() bool {
 	// If we're shutting down - stop connection watcher.
 	if weAreShuttingDown {
 		log.Println("Closing database connection...")
+
 		err := Conn.Close()
 		if err != nil {
 			log.Println("Failed to close database connection")
 		}
+
 		Conn = nil
+
 		return true
 	}
 

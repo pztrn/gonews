@@ -30,7 +30,9 @@ func main() {
 	// CTRL+C handler.
 	signalHandler := make(chan os.Signal, 1)
 	shutdownDone := make(chan bool, 1)
+
 	signal.Notify(signalHandler, os.Interrupt, syscall.SIGTERM)
+
 	go func() {
 		<-signalHandler
 		log.Println("CTRL+C or SIGTERM received, shutting down gonewsd...")

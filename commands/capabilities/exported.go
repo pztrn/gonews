@@ -46,5 +46,6 @@ func addCapability(data interface{}) interface{} {
 func handler(data interface{}) interface{} {
 	caps := make([]string, len(capabilities))
 	copy(caps, capabilities)
+
 	return caps
 }

@@ -5,6 +5,8 @@ linters:
   disable:
     # Actually not really needed.
     - gochecknoglobals
+    # Well, it might help, but not so much.
+    - funlen
 linters-settings:
   lll:
     line-length: 420

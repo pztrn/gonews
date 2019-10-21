@@ -14,7 +14,7 @@ var (
 	Conn *sqlx.DB
 
 	// Shutdown flags.
-	// Sets to true when Shutdown() is called to indicate other subsystes
+	// Sets to true when Shutdown() is called to indicate other subsystems
 	// that we're shutting down.
 	weAreShuttingDown bool
 	// Sets to true when connection watcher will be stopped.
@@ -35,6 +35,7 @@ func Initialize() {
 
 func Shutdown() {
 	weAreShuttingDown = true
+
 	for {
 		if connWatcherStopped {
 			break

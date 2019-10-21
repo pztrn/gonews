@@ -24,6 +24,7 @@ func startServer(config configuration.Network) {
 	if err != nil {
 		log.Fatalln("Failed to start TCP server on " + config.Address + ": " + err.Error())
 	}
+
 	defer func() {
 		err := l.Close()
 		if err != nil {

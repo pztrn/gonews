@@ -34,6 +34,7 @@ func Initialize() {
 
 		pathRaw = strings.Replace(pathRaw, "~", userHomeDir, 1)
 	}
+
 	absPath, err1 := filepath.Abs(pathRaw)
 	if err1 != nil {
 		log.Fatalln("Failed to get absolute path for configuration file: " + err1.Error())
@@ -46,6 +47,7 @@ func Initialize() {
 	}
 
 	Cfg = &config{}
+
 	err3 := yaml.Unmarshal(fileData, Cfg)
 	if err3 != nil {
 		log.Fatalln("Failed to parse configuration file: " + err3.Error())

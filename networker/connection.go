@@ -29,7 +29,7 @@ type connection struct {
 	// require start using two goroutines for handling connections,
 	// one for writing and one for reading.
 	transit bool
-	// Connection capabilites.
+	// Connection capabilities.
 	capabilities []string
 }
 
@@ -77,6 +77,7 @@ func (c *connection) Start() {
 		log.Println("Failed to write greeting for " + c.remoteAddr.String() + ": " + err.Error())
 		return
 	}
+
 	c.writer.Flush()
 
 	// Start reading for commands.
@@ -120,8 +121,9 @@ func (c *connection) Start() {
 			}
 
 			dataToWrite += ".\r\n"
-			c.writer.WriteString(dataToWrite)
+			_, _ = c.writer.WriteString(dataToWrite)
 			c.writer.Flush()
+
 			continue
 		}
 
@@ -129,8 +131,9 @@ func (c *connection) Start() {
 		if strings.ToLower(data[0]) == "mode" && strings.ToLower(data[1]) == "reader" {
 			c.transit = false
 			// In any case we'll require user authentication for posting.
-			c.writer.WriteString("201 Posting prohibited\r\n")
-			c.writer.Flush()
+			_, _ = c.writer.WriteString("201 Posting prohibited\r\n")
+			_ = c.writer.Flush()
+
 			continue
 		}
 
@@ -149,7 +152,9 @@ func (c *connection) Start() {
 				log.Println("Failed to write string to socket for " + c.remoteAddr.String() + ": " + err.Error())
 				break
 			}
-			c.writer.Flush()
+
+			_ = c.writer.Flush()
+
 			continue
 		}
 
@@ -161,7 +166,8 @@ func (c *connection) Start() {
 			log.Println("Failed to write string to socket for " + c.remoteAddr.String() + ": " + err1.Error())
 			break
 		}
-		c.writer.Flush()
+
+		_ = c.writer.Flush()
 
 		// Check for QUIT command.
 		if strings.ToLower(data[0]) == "quit" {

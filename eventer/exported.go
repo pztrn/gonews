@@ -33,6 +33,7 @@ func Initialize() {
 // all further events mapping changes.
 func InitializeCompleted() {
 	eventsInitialized = true
+
 	log.Println("Events initialization completed")
 }
 
@@ -53,6 +54,7 @@ func LaunchEvent(eventName string, data interface{}) (interface{}, error) {
 	}
 
 	returnedData := handler.Handler(data)
+
 	return returnedData, nil
 }
 

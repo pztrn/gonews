@@ -117,6 +117,7 @@ func TestEventerLaunchNotExistingEvent(t *testing.T) {
 	if err == nil {
 		t.Fatal("LaunchEvent() returned empty error!")
 	}
+
 	require.Nil(t, data)
 
 	Shutdown()
