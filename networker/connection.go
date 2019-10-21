@@ -8,7 +8,7 @@ import (
 	"strings"
 
 	// local
-	"develop.pztrn.name/gonews/gonews/eventer"
+	"sources.dev.pztrn.name/gonews/gonews/eventer"
 )
 
 // This structure represents single NNTP client connection.

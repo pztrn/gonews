@@ -8,11 +8,11 @@ import (
 	"syscall"
 
 	// local
-	"develop.pztrn.name/gonews/gonews/commands"
-	"develop.pztrn.name/gonews/gonews/configuration"
-	"develop.pztrn.name/gonews/gonews/database"
-	"develop.pztrn.name/gonews/gonews/eventer"
-	"develop.pztrn.name/gonews/gonews/networker"
+	"sources.dev.pztrn.name/gonews/gonews/commands"
+	"sources.dev.pztrn.name/gonews/gonews/configuration"
+	"sources.dev.pztrn.name/gonews/gonews/database"
+	"sources.dev.pztrn.name/gonews/gonews/eventer"
+	"sources.dev.pztrn.name/gonews/gonews/networker"
 )
 
 func main() {

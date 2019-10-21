@@ -5,7 +5,7 @@ import (
 	"log"
 
 	// local
-	"develop.pztrn.name/gonews/gonews/eventer"
+	"sources.dev.pztrn.name/gonews/gonews/eventer"
 )
 
 var capabilities = []string{

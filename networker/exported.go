@@ -5,7 +5,7 @@ import (
 	"log"
 
 	// local
-	"develop.pztrn.name/gonews/gonews/configuration"
+	"sources.dev.pztrn.name/gonews/gonews/configuration"
 )
 
 // Initialize initializes package.

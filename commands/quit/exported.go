@@ -5,8 +5,8 @@ import (
 	"log"
 
 	// local
-	"develop.pztrn.name/gonews/gonews/eventer"
-	"develop.pztrn.name/gonews/gonews/networker"
+	"sources.dev.pztrn.name/gonews/gonews/eventer"
+	"sources.dev.pztrn.name/gonews/gonews/networker"
 )
 
 func Initialize() {

@@ -6,7 +6,7 @@ import (
 	"net"
 
 	// local
-	"develop.pztrn.name/gonews/gonews/configuration"
+	"sources.dev.pztrn.name/gonews/gonews/configuration"
 )
 
 var connections map[string]*connection

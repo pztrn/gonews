@@ -5,9 +5,9 @@ import (
 	"log"
 
 	// local
-	"develop.pztrn.name/gonews/gonews/commands/capabilities"
-	"develop.pztrn.name/gonews/gonews/commands/greeting"
-	"develop.pztrn.name/gonews/gonews/commands/quit"
+	"sources.dev.pztrn.name/gonews/gonews/commands/capabilities"
+	"sources.dev.pztrn.name/gonews/gonews/commands/greeting"
+	"sources.dev.pztrn.name/gonews/gonews/commands/quit"
 )
 
 func Initialize() {

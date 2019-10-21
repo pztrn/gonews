@@ -7,8 +7,8 @@ import (
 	"time"
 
 	// local
-	"develop.pztrn.name/gonews/gonews/configuration"
-	"develop.pztrn.name/gonews/gonews/database/migrations"
+	"sources.dev.pztrn.name/gonews/gonews/configuration"
+	"sources.dev.pztrn.name/gonews/gonews/database/migrations"
 
 	// other
 	"github.com/jmoiron/sqlx"
