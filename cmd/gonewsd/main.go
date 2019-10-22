@@ -12,6 +12,7 @@ import (
 	"sources.dev.pztrn.name/gonews/gonews/configuration"
 	"sources.dev.pztrn.name/gonews/gonews/database"
 	"sources.dev.pztrn.name/gonews/gonews/eventer"
+	"sources.dev.pztrn.name/gonews/gonews/httpserver"
 	"sources.dev.pztrn.name/gonews/gonews/networker"
 )
 
@@ -22,6 +23,8 @@ func main() {
 	database.Initialize()
 	eventer.Initialize()
 	commands.Initialize()
+	httpserver.Initialize()
+	httpserver.Start()
 	networker.Initialize()
 
 	eventer.InitializeCompleted()

@@ -19,6 +19,7 @@ func Initialize() {
 	_ = goose.SetDialect("postgres")
 
 	goose.AddNamedMigration("1_create_users_table.go", CreateUsersTableUp, CreateUsersTableDown)
+	goose.AddNamedMigration("2_create_groups_info_table.go", CreateGroupsTableUp, CreateGroupsTableDown)
 }
 
 // Migrate parses environment for necessary parameters and starts

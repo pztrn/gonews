@@ -3,7 +3,11 @@ database:
   params: "connect_timeout=10&sslmode=disable"
   timeout: 10
 
+http:
+  listen: "127.0.0.1:43210"
+  wait_for_seconds: 10
+
 network:
-  - address: "0.0.0.0:1199"
+  - address: "127.0.0.1:1199"
     type: "client"
     limit: 50

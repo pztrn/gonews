@@ -4,6 +4,8 @@ package configuration
 type config struct {
 	// Database represents database configuration.
 	Database Database `yaml:"database"`
+	// HTTP represents HTTP server configuration.
+	HTTP HTTP `yaml:"http"`
 	// Network represents network stack configuration.
 	Network []Network `yaml:"network"`
 }
@@ -18,6 +20,16 @@ type Database struct {
 	// count of seconds connection watcher will check if database
 	// connection is alive.
 	Timeout int64 `yaml:"timeout"`
+}
+
+type HTTP struct {
+	// Listen is an address in form "ip:port" on which HTTP server
+	// will listen to requests.
+	Listen string `yaml:"listen"`
+	// WaitForSeconds is a timeout for waiting for HTTP server to be
+	// ready. If timeout will be passed and HTTP server will not be ready
+	// to process requests - we will exit.
+	WaitForSeconds int `yaml:"wait_for_seconds"`
 }
 
 type Network struct {
